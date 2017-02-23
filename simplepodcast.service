@@ -13,7 +13,7 @@ StartLimitBurst=10
 
 #Type=oneshot
 
-ExecStart=cd /opt/simple-podcast-server/ && node podcastserve.js
+ExecStart=/opt/simple-podcast-server/start-podcast-server.sh
 #RemainAfterExit=true
 #ExecStop=/opt/foo/teardown-foo.sh
 StandardOutput=journal
