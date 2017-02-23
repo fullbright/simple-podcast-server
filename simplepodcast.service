@@ -1,0 +1,23 @@
+[Unit]
+Description=Simple podcast service
+After=network.target
+#Requires=graphical.target
+#After=graphical.target
+
+[Service]
+User=fullbright
+StartLimitInterval=5
+StartLimitBurst=10
+#Environment=DISPLAY=:0.0
+#Environment=XAUTHORITY=/home/fullbright/.Xauthority
+
+#Type=oneshot
+
+ExecStart=cd /opt/simple-podcast-server/ && node podcastserve.js
+#RemainAfterExit=true
+#ExecStop=/opt/foo/teardown-foo.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
+#WantedBy=graphical.target
