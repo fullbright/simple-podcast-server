@@ -1,0 +1,9 @@
+simple-podcast-server:
+    build: .
+    user: '1000:1000'
+    container_name: simple-podcast-server
+    ports:
+        - "3010:3010"
+    restart: always
+    volumes:
+        - /home/sergio/dev/fr-replay-downloader/media:/opt/simple-podcast-server/public 
